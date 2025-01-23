@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food LLC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="./foodpics/swenlogo.png" alt="Food LLC Logo" class="nav-logo">
+            <h1>Food LLC</h1>
+        </div>
+        <div class="cart">
+            <img src="./foodpics/cart.png" alt="Cart" class="nav-logo">
+            <div class="cart-count" id="cart-count">0</div>
+        </div>
+    </nav>
+    <div class="notification" id="notification">Product added to cart!</div>
+    <div class="container">
+        <div class="box">
+            <img src="./foodpics/chickenfood.jpg.avif" alt="Chicken Food Logo" class="box-logo">
+            <h2>Chicken Food</h2>
+            <p>Delicious chicken meals prepared with fresh ingredients.</p>
+            <button onclick="addToCart()">Order Now</button>
+            <button onclick="location.href='chicken.html'">FOR MORE</button>
+        </div>
+        <div class="box">
+            <img src="./foodpics/meat.png" alt="Meat Food Logo" class="box-logo">
+            <h2>Meat Food</h2>
+            <p>Juicy meat dishes cooked to perfection.</p>
+            <button onclick="addToCart()">Order Now</button>
+            <button onclick="location.href='meat.html'">FOR MORE</button>
+        </div>
+        <div class="box">
+            <img src="./foodpics/suhsi,jpg.jpg" alt="Sushi Food Logo" class="box-logo">
+            <h2>Sushi Food</h2>
+            <p>Fresh and tasty sushi rolls 
+                and Raps</p>
+            <button onclick="addToCart()">Order Now</button>
+            <button onclick="location.href='sushi.html'">FOR MORE</button>
+        </div>
+    </div>
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            showNotification();
+        }
+
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

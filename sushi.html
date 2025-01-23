@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEAT FOOD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="./foodpics/swenlogo.png" alt="Food LLC Logo" class="nav-logo">
+            <h1>Food LLC</h1>
+        </div>
+        <div class="cart">
+            <img src="./foodpics/cart.png" alt="Cart" class="nav-logo">
+            <div class="cart-count" id="cart-count">0</div>
+        </div>
+    </nav>
+    <div class="notification" id="notification">Product added to cart!</div>
+    <div class="container">
+        <div class="box">
+            <img src="./foodpics/sushi1.png" alt="Chicken Food Logo" class="box-logo">
+            <h2>OSHIUSHI</h2>
+            <p> French stew of chicken braised in red wine with mushrooms and crispy pancetta. 
+                It’s the perfect dish to make on a chilly day when you’ve got time to putter around the kitchen.
+                 Bonus: the stew is even better the next day, and it freezes well too.
+                 Serve the chicken over buttered egg noodles or mashed potatoes, with crusty bread on the side.
+                  Get the recipe</p>
+            <button onclick="addToCart()">Order Now</button>
+        </div>
+        <div class="container">
+            <div class="box">
+                <img src="./foodpics/suhsi2.png" alt="Chicken Food Logo" class="box-logo">
+                <h2>TEMARI</h2>
+                <p>An Italian-American dish of sautéed BEEF breasts and mushrooms in a rich wine sauce,
+                     chicken Marsala is traditional restaurant dish that’s easy to make at home. It’s delicious with pasta,
+                      polenta, rice, or mashed potatoes.
+                     (You don’t want to miss this one — out of all the chicken recipes on the blog, this one is most popular!)
+                      Get the recipe for Chicken Marsala.</p>
+                <button onclick="addToCart()">Order Now</button>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <img src="./foodpics/sushi3.png" alt="Chicken Food Logo" class="box-logo">
+                    <h2>SASAZUSHI</h2>
+                    <p>One of my favorite chicken recipes for summer grilling, these kabobs are marinated in Greek yogurt,
+                         lemon, garlic and spices and then grilled until golden brown.
+                         Serve the kabobs with basmati rice pilaf with dried fruit and almonds (pictured) or over a Greek salad.
+                          And make a lot – these go fast! Get the recipe for Middle Eastern Chicken Kabobs.</p>
+                    <button onclick="addToCart()">Order Now</button>
+                </div>
+                </div>
+                <script>
+                    let cartCount = 0;
+            
+                    function addToCart() {
+                        cartCount++;
+                        document.getElementById('cart-count').textContent = cartCount;
+                        showNotification();
+                    }
+            
+                    function showNotification() {
+                        const notification = document.getElementById('notification');
+                        notification.style.display = 'block';
+                        setTimeout(() => {
+                            notification.style.display = 'none';
+                        }, 2000);
+                    }
+                </script>
